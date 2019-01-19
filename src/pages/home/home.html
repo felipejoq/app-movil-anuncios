@@ -1,0 +1,37 @@
+<ion-header text-center>
+  <ion-navbar>
+    <ion-title>Bienvenido(a) {{ usuario.name }} </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="cerrarSesion()">Salir</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center> <img src="assets/imgs/logo.png" /> </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button
+            ion-item
+            *ngFor="let anuncio of anuncios"
+            (click)="presentarModal(anuncio)"
+          >
+            {{ anuncio.title }}
+            <br /><span><small>Publicado el: {{ anuncio.date | date: 'dd / MM / yyyy' }}</small></span>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <div style="height: 5px; background-color: #26b4c2;"></div>
+</ion-footer>

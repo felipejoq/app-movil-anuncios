@@ -1,0 +1,37 @@
+<ion-header text-center>
+  <ion-navbar>
+    <ion-title>Anuncios App</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding scroll="false">
+<ion-grid>
+  <ion-row>
+    <ion-col text-center>
+      <img src="assets/imgs/logo.png">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-list>
+            <ion-item>
+              <ion-label floating>Username</ion-label>
+              <ion-input [(ngModel)]="datos.email" type="text" value=""></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input
+                [(ngModel)]="datos.password"
+                type="password"
+                value=""
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+        
+          <div padding>
+            <button ion-button primary block (click)="ingresar()">Ingresar</button>
+          </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
